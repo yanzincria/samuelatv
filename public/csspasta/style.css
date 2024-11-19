@@ -1,0 +1,59 @@
+ /* Definindo a paleta de cores com marrom */
+ :root {
+    --brown-light: #D1A15B;  /* Marrom claro */
+    --brown-medium: #A76E3A; /* Marrom médio */
+    --brown-dark: #6E4B3B;   /* Marrom escuro */
+    --cream: #F3E1C7;        /* Creme claro */
+  }
+
+  /* Corpo da página com fundo creme */
+  body {
+    background-color: var(--cream);
+    color: var(--brown-dark);
+  }
+
+
+
+  /* Estilos para o carrossel */
+  .carousel-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Títulos das seções */
+  .section-header {
+    color: var(--brown-dark);
+  }
+
+  /* Cartões (cards) */
+  .card {
+    border: 1px solid var(--brown-light);
+    border-radius: 8px;
+  }
+
+  .card-body {
+    background-color: var(--cream);
+  }
+
+  .card-title {
+    color: var(--brown-medium);
+  }
+
+  .card-text {
+    color: var(--brown-dark);
+  }
+
+  /* Rodapé com fundo marrom */
+  footer {
+    background-color: var(--brown-medium);
+    color: #fff;
+  }
+
+  footer a {
+    color: #fff;
+  }
+
+  footer a:hover {
+    color: var(--brown-light);
+  }

@@ -1,0 +1,49 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Jogo</h1>
+    <form action="/jogo/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control">
+        </section>
+
+        {{!-- CAMPO 2: Especialidade E CARGO --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="genero">Genero</label>
+                <input type="text" name="genero" id="genero" class="form-control"required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="num_jogadores">Numero de Jogadores</label>
+                <input type="text" name="num_jogadores" id="num_jogadores" class="form-control" required>
+            </div>
+        </section>
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="tempo_jogo">Tempo de Jogo</label>
+            <input type="time" name="tempo_jogo" id="tempo_jogo" class="form-control" required>
+        </section>
+
+        <section class="mb-2">
+            <label for="descricao">Descrição</label>
+            <input type="text" name="descricao" id="descricao" class="form-control" required>
+        </section>
+        {{!-- CAMPO 3 - SELECIONAR CÓDIGO DO DEPARTAMENTO --}}
+        <section class="mb-2">
+            <label for="jogo">Escolha a coleção</label>
+            <select name="jogo" id="jogo" class="form-select"required>
+                <option value="">Escolha uma opção...</option>
+                {{#each dados}}
+                <option value="{{dataValues.id}}">{{dataValues.nome}}</option>
+                {{/each}}
+
+            </select>
+        </section>
+
+        {{!-- CAMPO 4: BOTÃO DE CADASTRAR --}}
+        <section class="mb-2 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+    </form>
+</section>

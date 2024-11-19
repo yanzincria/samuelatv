@@ -1,0 +1,45 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página inicial do Jogo</h2>
+        <a href="/jogo/create" class="btn btn-primary">Cadastrar novo jogo</a>
+    </section>
+</section>
+
+<hr>
+
+<section class="my-4 container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Genero</th>
+                <th>Numero de Jogadores</th>
+                <th>Tempo de Jogo</th>
+                <th>Descrição</th>
+                <th>Coleção</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.genero}}</td>
+                <td>{{dataValues.num_jogadores}}</td>
+                <td>{{dataValues.tempo}}</td>
+                <td>{{dataValues.descricao}}</td>
+                <td>{{colecao.dataValues.nome}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+            {{!-- Estamos inserindo um componente que está na pasta partials dentro da views, ao colocarmos o sinal de > indicamos que este componente deve ser buscado da pasta partials--}}
+            {{>modalDeleteJogo idItem=dataValues.id}}
+            {{/each}}
+        </tbody>
+
+    </table>
+</section>

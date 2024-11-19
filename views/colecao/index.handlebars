@@ -1,0 +1,39 @@
+<section class="container">
+    <section class="d-flex justify-content-between mt-4">
+        <h2>Página inicial do Mecanico</h2>
+        <a href="/colecao/create" class="btn btn-primary">Cadastrar nova Coleção</a>
+    </section>
+</section>
+
+<hr>
+
+<section class="my-4 container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descricao</th>
+                <th>Categoria</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.descricao}}</td>
+                <td>{{dataValues.categoria}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+            {{!-- Estamos inserindo um componente que está na pasta partials dentro da views, ao colocarmos o sinal de > indicamos que este componente deve ser buscado da pasta partials--}}
+            {{>modalDelete idItem=dataValues.id}}
+            {{/each}}
+        </tbody>
+
+    </table>
+</section>

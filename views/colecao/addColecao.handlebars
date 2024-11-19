@@ -1,0 +1,29 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Coleção</h1>
+    <form action="/colecao/store" method="post">
+        {{!-- Campo 1: Nome --}}
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control"required>
+        </section>
+
+        {{!-- CAMPO 2: Especialidade E CARGO --}}
+        <section class="row mb-2">
+            <div class="col-md-6">
+                <label for="descricao">descrição</label>
+                <input type="text" name="descricao" id="descricao" class="form-control"required>
+            </div>
+
+            <div class="col-md-6">
+                <label for="categoria">categoria</label>
+                <input type="text" name="categoria" id="categoria" class="form-control"required>
+            </div>
+        </section>
+
+
+        {{!-- CAMPO 4: BOTÃO DE CADASTRAR --}}
+        <section class="mb-2 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Cadastrar</button>
+        </section>
+    </form>
+</section>
